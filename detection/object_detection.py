@@ -28,4 +28,4 @@ def detect_object(frame):
                       (255, 255, 255), cv2.FILLED)
         cv2.putText(frame, label, (left, top), cv2.FONT_HERSHEY_SIMPLEX, 0.5, (0, 0, 0))
 
-    return frame
+    return classes, confidences, boxes, frame
