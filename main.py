@@ -3,6 +3,7 @@ import io
 from PIL import Image
 import numpy as np
 from detection.object_detection import detect_object
+import time
 
 
 def main():
@@ -14,7 +15,10 @@ def main():
             detection = detect_object(img_array)
             image = detection[3]
             st.write('**Результаты распознавания:**')
+            with st.spinner('Ожидайте загрузку'):
+                time.sleep(2)
             st.image(image)
+            st.success('Успешное распознование', icon="✅")
 
 
 def load_image():
